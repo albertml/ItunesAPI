@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct Movies {
+    let trackArtist: String
+    let trackName: String
+    let artWorkSmall: String
+    let artWorkBig: String
+    let price: Double
+    let genre: String
+    let description: String
+}

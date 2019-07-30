@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
+        
+        UINavigationBar.appearance().tintColor = .white
+        
         return true
     }
 
@@ -55,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
         guard let topAsDetailController = secondaryAsNavController.topViewController as? ItemDetailViewController else { return false }
-        if topAsDetailController.detailItem == nil {
+        if topAsDetailController.movie == nil {
             // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
             return true
         }

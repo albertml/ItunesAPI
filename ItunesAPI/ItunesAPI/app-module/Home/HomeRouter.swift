@@ -26,9 +26,9 @@ class HomeRouter: HomePresenterToRouterProtocol {
         return homeVC
     }
     
-    func pushToItemDetailScreen(viewController: HomeViewController, date: NSDate, segue: UIStoryboardSegue) {
+    func pushToItemDetailScreen(viewController: HomeViewController, movie: Movies, segue: UIStoryboardSegue) {
         let itemDetailModule = (segue.destination as! UINavigationController).topViewController as! ItemDetailViewController
-        itemDetailModule.detailItem = date
+        itemDetailModule.movie = movie
         itemDetailModule.navigationItem.leftBarButtonItem = itemDetailModule.splitViewController?.displayModeButtonItem
         itemDetailModule.navigationItem.leftItemsSupplementBackButton = true
     }

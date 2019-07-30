@@ -12,6 +12,7 @@ class HomePresenter: HomeViewToPresenterProtocol {
     var router: HomePresenterToRouterProtocol?
     var view: HomeViewController!
     var interactor: HomePresenterToInteractorProtocol!
+    var movies: [Movies] = []
     
     func setupNavigationButton() {
         view.setupNavigationButton()
@@ -20,13 +21,24 @@ class HomePresenter: HomeViewToPresenterProtocol {
     func setupViews() {
         view.setupViews()
     }
-    func goToItemDetail(date: NSDate, segue: UIStoryboardSegue) {
-        router?.pushToItemDetailScreen(viewController: view, date: date, segue: segue)
+    
+    func goToItemDetail(movies movie: Movies, segue: UIStoryboardSegue) {
+        router?.pushToItemDetailScreen(viewController: view, movie: movie, segue: segue)
+    }
+    
+    func searchMovies(term: String) {
+        interactor.searchMovies(term: term)
     }
 }
 
 extension HomePresenter: HomeInteractorToPresenterProtocol {
-    func dummy() {
-        //
+    func successInGettingMovies(movies: [Movies]) {
+        self.movies = movies
+        view.successInGettingMovies()
+        print(movies)
+    }
+    
+    func failedInGettingMovies(errorMsg: String) {
+        view.failedInGettingMovies(errorMsg: errorMsg)
     }
 }

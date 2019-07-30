@@ -11,29 +11,34 @@ import UIKit
 protocol HomePresenterToViewProtocol: class {
     func setupNavigationButton()
     func setupViews()
+    func successInGettingMovies()
+    func failedInGettingMovies(errorMsg: String)
 }
 
 protocol HomeViewToPresenterProtocol: class {
     var router: HomePresenterToRouterProtocol? { get set }
     var view: HomeViewController! { get set }
     var interactor: HomePresenterToInteractorProtocol! { get set }
+    var movies: [Movies] { get set }
     func setupNavigationButton()
     func setupViews()
-    func goToItemDetail(date: NSDate, segue: UIStoryboardSegue)
+    func goToItemDetail(movies: Movies, segue: UIStoryboardSegue)
+    func searchMovies(term: String)
 }
 
 protocol HomeInteractorToPresenterProtocol: class {
-    func dummy()
+    func successInGettingMovies(movies: [Movies])
+    func failedInGettingMovies(errorMsg: String)
 }
 
 protocol HomePresenterToRouterProtocol: class {
     static func createHomeModule() -> HomeViewController
-    func pushToItemDetailScreen(viewController: HomeViewController, date: NSDate, segue: UIStoryboardSegue)
+    func pushToItemDetailScreen(viewController: HomeViewController, movie: Movies, segue: UIStoryboardSegue)
 }
 
 protocol HomePresenterToInteractorProtocol: class {
     var presenter: HomeInteractorToPresenterProtocol? { get set }
-    func dummy()
+    func searchMovies(term: String)
     
 }
 

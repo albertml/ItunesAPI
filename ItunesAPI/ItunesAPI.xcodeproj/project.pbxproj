@@ -17,12 +17,20 @@
 		504641FB22EFF35900B0DADB /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641FA22EFF35900B0DADB /* UIViewController+Extensions.swift */; };
 		504641FE22EFFCFF00B0DADB /* FireGrillAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641FD22EFFCFF00B0DADB /* FireGrillAPI.swift */; };
 		50A60C1B22EFEA6400DFA439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A60C1A22EFEA6400DFA439 /* AppDelegate.swift */; };
-		50A60C1F22EFEA6400DFA439 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A60C1E22EFEA6400DFA439 /* DetailViewController.swift */; };
+		50A60C1F22EFEA6400DFA439 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A60C1E22EFEA6400DFA439 /* ItemDetailViewController.swift */; };
 		50A60C2222EFEA6400DFA439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A60C2022EFEA6400DFA439 /* Main.storyboard */; };
 		50A60C2422EFEA6500DFA439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50A60C2322EFEA6500DFA439 /* Assets.xcassets */; };
 		50A60C2722EFEA6500DFA439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A60C2522EFEA6500DFA439 /* LaunchScreen.storyboard */; };
 		50A60C3222EFEA6500DFA439 /* ItunesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A60C3122EFEA6500DFA439 /* ItunesAPITests.swift */; };
 		50A60C3D22EFEA6500DFA439 /* ItunesAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A60C3C22EFEA6500DFA439 /* ItunesAPIUITests.swift */; };
+		50CA655F22F02A4F00BD0BCC /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA655E22F02A4F00BD0BCC /* UIColor+Extensions.swift */; };
+		50CA656122F030FE00BD0BCC /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA656022F030FE00BD0BCC /* Data+Extensions.swift */; };
+		50CA656322F0317C00BD0BCC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA656222F0317C00BD0BCC /* String+Extensions.swift */; };
+		50CA656722F037AE00BD0BCC /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA656522F037AE00BD0BCC /* MoviesTableViewCell.swift */; };
+		50CA656822F037AE00BD0BCC /* MoviesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50CA656622F037AE00BD0BCC /* MoviesTableViewCell.xib */; };
+		50CA656A22F0384600BD0BCC /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA656922F0384600BD0BCC /* UITableView+Extensions.swift */; };
+		50CA656C22F0387B00BD0BCC /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA656B22F0387B00BD0BCC /* ReusableView.swift */; };
+		50CA656E22F03A9300BD0BCC /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA656D22F03A9300BD0BCC /* UIImageView+Extensions.swift */; };
 		A6F477786806AC9022ABA6A5 /* Pods_ItunesAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5971281747A3F3389D2EA7E9 /* Pods_ItunesAPI.framework */; };
 		CD22A4FF27501896AEC4CFA8 /* Pods_ItunesAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2A7690B8FBDD5968F20EC7 /* Pods_ItunesAPITests.framework */; };
 		E5643D39D91D9A34896DD5CB /* Pods_ItunesAPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7029965E23375D6F29D46FA3 /* Pods_ItunesAPIUITests.framework */; };
@@ -57,7 +65,7 @@
 		504641FD22EFFCFF00B0DADB /* FireGrillAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireGrillAPI.swift; sourceTree = "<group>"; };
 		50A60C1722EFEA6400DFA439 /* ItunesAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A60C1A22EFEA6400DFA439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50A60C1E22EFEA6400DFA439 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		50A60C1E22EFEA6400DFA439 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		50A60C2122EFEA6400DFA439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50A60C2322EFEA6500DFA439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50A60C2622EFEA6500DFA439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,6 +76,14 @@
 		50A60C3822EFEA6500DFA439 /* ItunesAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItunesAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A60C3C22EFEA6500DFA439 /* ItunesAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesAPIUITests.swift; sourceTree = "<group>"; };
 		50A60C3E22EFEA6500DFA439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50CA655E22F02A4F00BD0BCC /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		50CA656022F030FE00BD0BCC /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		50CA656222F0317C00BD0BCC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		50CA656522F037AE00BD0BCC /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
+		50CA656622F037AE00BD0BCC /* MoviesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesTableViewCell.xib; sourceTree = "<group>"; };
+		50CA656922F0384600BD0BCC /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		50CA656B22F0387B00BD0BCC /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		50CA656D22F03A9300BD0BCC /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		5971281747A3F3389D2EA7E9 /* Pods_ItunesAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ItunesAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7029965E23375D6F29D46FA3 /* Pods_ItunesAPIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ItunesAPIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BC20678E28C0B47116ED46 /* Pods-ItunesAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItunesAPI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ItunesAPI/Pods-ItunesAPI.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +179,7 @@
 				504641F122EFF23200B0DADB /* HomeRouter.swift */,
 				504641F322EFF24300B0DADB /* HomeProtocol.swift */,
 				504641EA22EFF13200B0DADB /* StoryBoard */,
+				50CA656422F0378F00BD0BCC /* Xibs */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -170,7 +187,7 @@
 		504641E922EFF0F100B0DADB /* ItemDetail */ = {
 			isa = PBXGroup;
 			children = (
-				50A60C1E22EFEA6400DFA439 /* DetailViewController.swift */,
+				50A60C1E22EFEA6400DFA439 /* ItemDetailViewController.swift */,
 			);
 			path = ItemDetail;
 			sourceTree = "<group>";
@@ -188,6 +205,12 @@
 			children = (
 				504641F522EFF2D600B0DADB /* AppStoryboard.swift */,
 				504641FA22EFF35900B0DADB /* UIViewController+Extensions.swift */,
+				50CA655E22F02A4F00BD0BCC /* UIColor+Extensions.swift */,
+				50CA656022F030FE00BD0BCC /* Data+Extensions.swift */,
+				50CA656222F0317C00BD0BCC /* String+Extensions.swift */,
+				50CA656922F0384600BD0BCC /* UITableView+Extensions.swift */,
+				50CA656B22F0387B00BD0BCC /* ReusableView.swift */,
+				50CA656D22F03A9300BD0BCC /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -249,6 +272,15 @@
 				50A60C3E22EFEA6500DFA439 /* Info.plist */,
 			);
 			path = ItunesAPIUITests;
+			sourceTree = "<group>";
+		};
+		50CA656422F0378F00BD0BCC /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				50CA656522F037AE00BD0BCC /* MoviesTableViewCell.swift */,
+				50CA656622F037AE00BD0BCC /* MoviesTableViewCell.xib */,
+			);
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 		F036DD8C5B0B2C586F6A314C /* Pods */ = {
@@ -374,6 +406,7 @@
 			files = (
 				50A60C2722EFEA6500DFA439 /* LaunchScreen.storyboard in Resources */,
 				50A60C2422EFEA6500DFA439 /* Assets.xcassets in Resources */,
+				50CA656822F037AE00BD0BCC /* MoviesTableViewCell.xib in Resources */,
 				50A60C2222EFEA6400DFA439 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -499,14 +532,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				504641F422EFF24300B0DADB /* HomeProtocol.swift in Sources */,
+				50CA656C22F0387B00BD0BCC /* ReusableView.swift in Sources */,
 				504641F622EFF2D600B0DADB /* AppStoryboard.swift in Sources */,
 				504641FB22EFF35900B0DADB /* UIViewController+Extensions.swift in Sources */,
-				50A60C1F22EFEA6400DFA439 /* DetailViewController.swift in Sources */,
+				50CA656A22F0384600BD0BCC /* UITableView+Extensions.swift in Sources */,
+				50A60C1F22EFEA6400DFA439 /* ItemDetailViewController.swift in Sources */,
 				504641EC22EFF1F400B0DADB /* HomeEntity.swift in Sources */,
 				504641F222EFF23200B0DADB /* HomeRouter.swift in Sources */,
 				504641EE22EFF20400B0DADB /* HomeIteractor.swift in Sources */,
+				50CA656122F030FE00BD0BCC /* Data+Extensions.swift in Sources */,
+				50CA656322F0317C00BD0BCC /* String+Extensions.swift in Sources */,
+				50CA655F22F02A4F00BD0BCC /* UIColor+Extensions.swift in Sources */,
+				50CA656E22F03A9300BD0BCC /* UIImageView+Extensions.swift in Sources */,
 				504641F022EFF21600B0DADB /* HomePresenter.swift in Sources */,
 				504641FE22EFFCFF00B0DADB /* FireGrillAPI.swift in Sources */,
+				50CA656722F037AE00BD0BCC /* MoviesTableViewCell.swift in Sources */,
 				50A60C1B22EFEA6400DFA439 /* AppDelegate.swift in Sources */,
 				504641E722EFF07F00B0DADB /* HomeViewController.swift in Sources */,
 			);
