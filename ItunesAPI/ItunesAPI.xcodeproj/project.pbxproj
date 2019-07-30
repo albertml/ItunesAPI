@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		504641E722EFF07F00B0DADB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641E622EFF07F00B0DADB /* HomeViewController.swift */; };
+		504641EC22EFF1F400B0DADB /* HomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641EB22EFF1F400B0DADB /* HomeEntity.swift */; };
+		504641EE22EFF20400B0DADB /* HomeIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641ED22EFF20400B0DADB /* HomeIteractor.swift */; };
+		504641F022EFF21600B0DADB /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641EF22EFF21600B0DADB /* HomePresenter.swift */; };
+		504641F222EFF23200B0DADB /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641F122EFF23200B0DADB /* HomeRouter.swift */; };
+		504641F422EFF24300B0DADB /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641F322EFF24300B0DADB /* HomeProtocol.swift */; };
+		504641F622EFF2D600B0DADB /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641F522EFF2D600B0DADB /* AppStoryboard.swift */; };
+		504641FB22EFF35900B0DADB /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641FA22EFF35900B0DADB /* UIViewController+Extensions.swift */; };
 		50A60C1B22EFEA6400DFA439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A60C1A22EFEA6400DFA439 /* AppDelegate.swift */; };
-		50A60C1D22EFEA6400DFA439 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A60C1C22EFEA6400DFA439 /* MasterViewController.swift */; };
 		50A60C1F22EFEA6400DFA439 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A60C1E22EFEA6400DFA439 /* DetailViewController.swift */; };
 		50A60C2222EFEA6400DFA439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A60C2022EFEA6400DFA439 /* Main.storyboard */; };
 		50A60C2422EFEA6500DFA439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50A60C2322EFEA6500DFA439 /* Assets.xcassets */; };
@@ -38,9 +45,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		504641E622EFF07F00B0DADB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		504641EB22EFF1F400B0DADB /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
+		504641ED22EFF20400B0DADB /* HomeIteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIteractor.swift; sourceTree = "<group>"; };
+		504641EF22EFF21600B0DADB /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		504641F122EFF23200B0DADB /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		504641F322EFF24300B0DADB /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
+		504641F522EFF2D600B0DADB /* AppStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
+		504641FA22EFF35900B0DADB /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		50A60C1722EFEA6400DFA439 /* ItunesAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A60C1A22EFEA6400DFA439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50A60C1C22EFEA6400DFA439 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		50A60C1E22EFEA6400DFA439 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		50A60C2122EFEA6400DFA439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50A60C2322EFEA6500DFA439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +115,80 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		504641E222EFEFB600B0DADB /* app-settings */ = {
+			isa = PBXGroup;
+			children = (
+				50A60C1A22EFEA6400DFA439 /* AppDelegate.swift */,
+				50A60C2822EFEA6500DFA439 /* Info.plist */,
+			);
+			path = "app-settings";
+			sourceTree = "<group>";
+		};
+		504641E322EFEFC100B0DADB /* app-module */ = {
+			isa = PBXGroup;
+			children = (
+				504641E822EFF08300B0DADB /* Home */,
+				504641E922EFF0F100B0DADB /* ItemDetail */,
+			);
+			path = "app-module";
+			sourceTree = "<group>";
+		};
+		504641E422EFEFCD00B0DADB /* common-utils */ = {
+			isa = PBXGroup;
+			children = (
+				504641F722EFF32200B0DADB /* Extensions */,
+			);
+			path = "common-utils";
+			sourceTree = "<group>";
+		};
+		504641E522EFEFD600B0DADB /* app-resources */ = {
+			isa = PBXGroup;
+			children = (
+				50A60C2522EFEA6500DFA439 /* LaunchScreen.storyboard */,
+				50A60C2322EFEA6500DFA439 /* Assets.xcassets */,
+			);
+			path = "app-resources";
+			sourceTree = "<group>";
+		};
+		504641E822EFF08300B0DADB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				504641E622EFF07F00B0DADB /* HomeViewController.swift */,
+				504641ED22EFF20400B0DADB /* HomeIteractor.swift */,
+				504641EF22EFF21600B0DADB /* HomePresenter.swift */,
+				504641EB22EFF1F400B0DADB /* HomeEntity.swift */,
+				504641F122EFF23200B0DADB /* HomeRouter.swift */,
+				504641F322EFF24300B0DADB /* HomeProtocol.swift */,
+				504641EA22EFF13200B0DADB /* StoryBoard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		504641E922EFF0F100B0DADB /* ItemDetail */ = {
+			isa = PBXGroup;
+			children = (
+				50A60C1E22EFEA6400DFA439 /* DetailViewController.swift */,
+			);
+			path = ItemDetail;
+			sourceTree = "<group>";
+		};
+		504641EA22EFF13200B0DADB /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				50A60C2022EFEA6400DFA439 /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		504641F722EFF32200B0DADB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				504641F522EFF2D600B0DADB /* AppStoryboard.swift */,
+				504641FA22EFF35900B0DADB /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		50A60C0E22EFEA6400DFA439 = {
 			isa = PBXGroup;
 			children = (
@@ -126,13 +214,10 @@
 		50A60C1922EFEA6400DFA439 /* ItunesAPI */ = {
 			isa = PBXGroup;
 			children = (
-				50A60C1A22EFEA6400DFA439 /* AppDelegate.swift */,
-				50A60C1C22EFEA6400DFA439 /* MasterViewController.swift */,
-				50A60C1E22EFEA6400DFA439 /* DetailViewController.swift */,
-				50A60C2022EFEA6400DFA439 /* Main.storyboard */,
-				50A60C2322EFEA6500DFA439 /* Assets.xcassets */,
-				50A60C2522EFEA6500DFA439 /* LaunchScreen.storyboard */,
-				50A60C2822EFEA6500DFA439 /* Info.plist */,
+				504641E222EFEFB600B0DADB /* app-settings */,
+				504641E422EFEFCD00B0DADB /* common-utils */,
+				504641E322EFEFC100B0DADB /* app-module */,
+				504641E522EFEFD600B0DADB /* app-resources */,
 			);
 			path = ItunesAPI;
 			sourceTree = "<group>";
@@ -402,9 +487,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				504641F422EFF24300B0DADB /* HomeProtocol.swift in Sources */,
+				504641F622EFF2D600B0DADB /* AppStoryboard.swift in Sources */,
+				504641FB22EFF35900B0DADB /* UIViewController+Extensions.swift in Sources */,
 				50A60C1F22EFEA6400DFA439 /* DetailViewController.swift in Sources */,
-				50A60C1D22EFEA6400DFA439 /* MasterViewController.swift in Sources */,
+				504641EC22EFF1F400B0DADB /* HomeEntity.swift in Sources */,
+				504641F222EFF23200B0DADB /* HomeRouter.swift in Sources */,
+				504641EE22EFF20400B0DADB /* HomeIteractor.swift in Sources */,
+				504641F022EFF21600B0DADB /* HomePresenter.swift in Sources */,
 				50A60C1B22EFEA6400DFA439 /* AppDelegate.swift in Sources */,
+				504641E722EFF07F00B0DADB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,7 +674,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UJUHDYDHF;
-				INFOPLIST_FILE = ItunesAPI/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ItunesAPI/app-settings/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -601,7 +693,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4UJUHDYDHF;
-				INFOPLIST_FILE = ItunesAPI/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ItunesAPI/app-settings/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
