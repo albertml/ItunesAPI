@@ -1,0 +1,34 @@
+PODS:
+  - Alamofire (4.8.2)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Nuke (7.6.3)
+  - Result (4.1.0)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Moya
+  - Nuke
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Moya
+    - Nuke
+    - Result
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Nuke: 44130e95e09463f8773ae4b96b90de1eba6b3350
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: 4725bf5e3e8c94ae0783568cde740210c101ef23
+
+COCOAPODS: 1.5.3
