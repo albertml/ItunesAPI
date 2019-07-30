@@ -15,6 +15,7 @@
 		504641F422EFF24300B0DADB /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641F322EFF24300B0DADB /* HomeProtocol.swift */; };
 		504641F622EFF2D600B0DADB /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641F522EFF2D600B0DADB /* AppStoryboard.swift */; };
 		504641FB22EFF35900B0DADB /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641FA22EFF35900B0DADB /* UIViewController+Extensions.swift */; };
+		504641FE22EFFCFF00B0DADB /* FireGrillAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641FD22EFFCFF00B0DADB /* FireGrillAPI.swift */; };
 		50A60C1B22EFEA6400DFA439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A60C1A22EFEA6400DFA439 /* AppDelegate.swift */; };
 		50A60C1F22EFEA6400DFA439 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A60C1E22EFEA6400DFA439 /* DetailViewController.swift */; };
 		50A60C2222EFEA6400DFA439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A60C2022EFEA6400DFA439 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		504641F322EFF24300B0DADB /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		504641F522EFF2D600B0DADB /* AppStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		504641FA22EFF35900B0DADB /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		504641FD22EFFCFF00B0DADB /* FireGrillAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireGrillAPI.swift; sourceTree = "<group>"; };
 		50A60C1722EFEA6400DFA439 /* ItunesAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A60C1A22EFEA6400DFA439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50A60C1E22EFEA6400DFA439 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				504641F722EFF32200B0DADB /* Extensions */,
+				504641FC22EFFCEB00B0DADB /* API */,
 			);
 			path = "common-utils";
 			sourceTree = "<group>";
@@ -187,6 +190,14 @@
 				504641FA22EFF35900B0DADB /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		504641FC22EFFCEB00B0DADB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				504641FD22EFFCFF00B0DADB /* FireGrillAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		50A60C0E22EFEA6400DFA439 = {
@@ -495,6 +506,7 @@
 				504641F222EFF23200B0DADB /* HomeRouter.swift in Sources */,
 				504641EE22EFF20400B0DADB /* HomeIteractor.swift in Sources */,
 				504641F022EFF21600B0DADB /* HomePresenter.swift in Sources */,
+				504641FE22EFFCFF00B0DADB /* FireGrillAPI.swift in Sources */,
 				50A60C1B22EFEA6400DFA439 /* AppDelegate.swift in Sources */,
 				504641E722EFF07F00B0DADB /* HomeViewController.swift in Sources */,
 			);

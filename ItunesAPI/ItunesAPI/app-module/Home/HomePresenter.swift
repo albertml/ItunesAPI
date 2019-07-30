@@ -6,7 +6,7 @@
 //  Copyright © 2019 Alberto Gaudicos Jr. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class HomePresenter: HomeViewToPresenterProtocol {
     var router: HomePresenterToRouterProtocol?
@@ -20,8 +20,8 @@ class HomePresenter: HomeViewToPresenterProtocol {
     func setupViews() {
         view.setupViews()
     }
-    func goToItemDetail(date: NSDate) {
-        router?.pushToItemDetailScreen(viewController: view, date: date)
+    func goToItemDetail(date: NSDate, segue: UIStoryboardSegue) {
+        router?.pushToItemDetailScreen(viewController: view, date: date, segue: segue)
     }
 }
 

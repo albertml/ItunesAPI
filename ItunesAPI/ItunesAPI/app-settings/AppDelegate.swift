@@ -18,9 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Override point for customization after application launch.
         let splitViewController = window!.rootViewController as! UISplitViewController
         let homeVC = HomeRouter.createHomeModule()
-//        let navigationController = UINavigationController()
+        let homeNC = UINavigationController()
+        homeNC.viewControllers = [homeVC]
+        splitViewController.viewControllers[0] = homeNC
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
-        navigationController.viewControllers = [homeVC]
+        
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
         return true

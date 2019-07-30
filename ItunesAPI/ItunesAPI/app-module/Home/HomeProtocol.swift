@@ -6,7 +6,7 @@
 //  Copyright © 2019 Alberto Gaudicos Jr. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol HomePresenterToViewProtocol: class {
     func setupNavigationButton()
@@ -19,7 +19,7 @@ protocol HomeViewToPresenterProtocol: class {
     var interactor: HomePresenterToInteractorProtocol! { get set }
     func setupNavigationButton()
     func setupViews()
-    func goToItemDetail(date: NSDate)
+    func goToItemDetail(date: NSDate, segue: UIStoryboardSegue)
 }
 
 protocol HomeInteractorToPresenterProtocol: class {
@@ -28,7 +28,7 @@ protocol HomeInteractorToPresenterProtocol: class {
 
 protocol HomePresenterToRouterProtocol: class {
     static func createHomeModule() -> HomeViewController
-    func pushToItemDetailScreen(viewController: HomeViewController, date: NSDate)
+    func pushToItemDetailScreen(viewController: HomeViewController, date: NSDate, segue: UIStoryboardSegue)
 }
 
 protocol HomePresenterToInteractorProtocol: class {

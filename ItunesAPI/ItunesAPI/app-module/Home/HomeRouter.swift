@@ -6,7 +6,7 @@
 //  Copyright © 2019 Alberto Gaudicos Jr. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class HomeRouter: HomePresenterToRouterProtocol {
     
@@ -26,9 +26,10 @@ class HomeRouter: HomePresenterToRouterProtocol {
         return homeVC
     }
     
-    func pushToItemDetailScreen(viewController: HomeViewController, date: NSDate) {
-        let itemDetailModule = ItemDetailViewController.instantiate(fromAppStoryboard: .Main)
+    func pushToItemDetailScreen(viewController: HomeViewController, date: NSDate, segue: UIStoryboardSegue) {
+        let itemDetailModule = (segue.destination as! UINavigationController).topViewController as! ItemDetailViewController
         itemDetailModule.detailItem = date
-        viewController.navigationController?.pushViewController(itemDetailModule,animated: true)
+        itemDetailModule.navigationItem.leftBarButtonItem = itemDetailModule.splitViewController?.displayModeButtonItem
+        itemDetailModule.navigationItem.leftItemsSupplementBackButton = true
     }
 }

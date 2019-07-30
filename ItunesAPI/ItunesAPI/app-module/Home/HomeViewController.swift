@@ -74,11 +74,16 @@ class HomeViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let object = objects[indexPath.row] as! NSDate
-        presenter?.goToItemDetail(date: object)
-    }
+    // MARK: - Segues
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let object = objects[indexPath.row] as! NSDate
+                presenter?.goToItemDetail(date: object, segue: segue)
+            }
+        }
+    }
 }
 
 extension HomeViewController: HomePresenterToViewProtocol {
