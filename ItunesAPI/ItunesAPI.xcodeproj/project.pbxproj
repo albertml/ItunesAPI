@@ -23,6 +23,12 @@
 		50A60C2722EFEA6500DFA439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A60C2522EFEA6500DFA439 /* LaunchScreen.storyboard */; };
 		50A60C3222EFEA6500DFA439 /* ItunesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A60C3122EFEA6500DFA439 /* ItunesAPITests.swift */; };
 		50A60C3D22EFEA6500DFA439 /* ItunesAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A60C3C22EFEA6500DFA439 /* ItunesAPIUITests.swift */; };
+		50C1395822F1181100C205D9 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C1395722F1181100C205D9 /* LoaderView.swift */; };
+		50C1395B22F1197400C205D9 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C1395A22F1197400C205D9 /* RealmManager.swift */; };
+		50C1395F22F122B800C205D9 /* UserDefauts+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C1395E22F122B800C205D9 /* UserDefauts+Extensions.swift */; };
+		50C1396222F1237500C205D9 /* LastViewedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C1396022F1237500C205D9 /* LastViewedTableViewCell.swift */; };
+		50C1396322F1237500C205D9 /* LastViewedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C1396122F1237500C205D9 /* LastViewedTableViewCell.xib */; };
+		50C1396522F1257400C205D9 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C1396422F1257400C205D9 /* Date+Extensions.swift */; };
 		50CA655F22F02A4F00BD0BCC /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA655E22F02A4F00BD0BCC /* UIColor+Extensions.swift */; };
 		50CA656122F030FE00BD0BCC /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA656022F030FE00BD0BCC /* Data+Extensions.swift */; };
 		50CA656322F0317C00BD0BCC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CA656222F0317C00BD0BCC /* String+Extensions.swift */; };
@@ -76,6 +82,12 @@
 		50A60C3822EFEA6500DFA439 /* ItunesAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItunesAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A60C3C22EFEA6500DFA439 /* ItunesAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesAPIUITests.swift; sourceTree = "<group>"; };
 		50A60C3E22EFEA6500DFA439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50C1395722F1181100C205D9 /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		50C1395A22F1197400C205D9 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		50C1395E22F122B800C205D9 /* UserDefauts+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefauts+Extensions.swift"; sourceTree = "<group>"; };
+		50C1396022F1237500C205D9 /* LastViewedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastViewedTableViewCell.swift; sourceTree = "<group>"; };
+		50C1396122F1237500C205D9 /* LastViewedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastViewedTableViewCell.xib; sourceTree = "<group>"; };
+		50C1396422F1257400C205D9 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		50CA655E22F02A4F00BD0BCC /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		50CA656022F030FE00BD0BCC /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		50CA656222F0317C00BD0BCC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -154,6 +166,8 @@
 		504641E422EFEFCD00B0DADB /* common-utils */ = {
 			isa = PBXGroup;
 			children = (
+				50C1395922F1195D00C205D9 /* Manager */,
+				50C1395622F1181100C205D9 /* CustomViews */,
 				504641F722EFF32200B0DADB /* Extensions */,
 				504641FC22EFFCEB00B0DADB /* API */,
 			);
@@ -211,6 +225,8 @@
 				50CA656922F0384600BD0BCC /* UITableView+Extensions.swift */,
 				50CA656B22F0387B00BD0BCC /* ReusableView.swift */,
 				50CA656D22F03A9300BD0BCC /* UIImageView+Extensions.swift */,
+				50C1395E22F122B800C205D9 /* UserDefauts+Extensions.swift */,
+				50C1396422F1257400C205D9 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,11 +290,29 @@
 			path = ItunesAPIUITests;
 			sourceTree = "<group>";
 		};
+		50C1395622F1181100C205D9 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				50C1395722F1181100C205D9 /* LoaderView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		50C1395922F1195D00C205D9 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				50C1395A22F1197400C205D9 /* RealmManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		50CA656422F0378F00BD0BCC /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
 				50CA656522F037AE00BD0BCC /* MoviesTableViewCell.swift */,
 				50CA656622F037AE00BD0BCC /* MoviesTableViewCell.xib */,
+				50C1396022F1237500C205D9 /* LastViewedTableViewCell.swift */,
+				50C1396122F1237500C205D9 /* LastViewedTableViewCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -405,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A60C2722EFEA6500DFA439 /* LaunchScreen.storyboard in Resources */,
+				50C1396322F1237500C205D9 /* LastViewedTableViewCell.xib in Resources */,
 				50A60C2422EFEA6500DFA439 /* Assets.xcassets in Resources */,
 				50CA656822F037AE00BD0BCC /* MoviesTableViewCell.xib in Resources */,
 				50A60C2222EFEA6400DFA439 /* Main.storyboard in Resources */,
@@ -484,6 +519,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -494,6 +531,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -538,7 +577,10 @@
 				50CA656A22F0384600BD0BCC /* UITableView+Extensions.swift in Sources */,
 				50A60C1F22EFEA6400DFA439 /* ItemDetailViewController.swift in Sources */,
 				504641EC22EFF1F400B0DADB /* HomeEntity.swift in Sources */,
+				50C1395822F1181100C205D9 /* LoaderView.swift in Sources */,
 				504641F222EFF23200B0DADB /* HomeRouter.swift in Sources */,
+				50C1396222F1237500C205D9 /* LastViewedTableViewCell.swift in Sources */,
+				50C1396522F1257400C205D9 /* Date+Extensions.swift in Sources */,
 				504641EE22EFF20400B0DADB /* HomeIteractor.swift in Sources */,
 				50CA656122F030FE00BD0BCC /* Data+Extensions.swift in Sources */,
 				50CA656322F0317C00BD0BCC /* String+Extensions.swift in Sources */,
@@ -547,6 +589,8 @@
 				504641F022EFF21600B0DADB /* HomePresenter.swift in Sources */,
 				504641FE22EFFCFF00B0DADB /* FireGrillAPI.swift in Sources */,
 				50CA656722F037AE00BD0BCC /* MoviesTableViewCell.swift in Sources */,
+				50C1395F22F122B800C205D9 /* UserDefauts+Extensions.swift in Sources */,
+				50C1395B22F1197400C205D9 /* RealmManager.swift in Sources */,
 				50A60C1B22EFEA6400DFA439 /* AppDelegate.swift in Sources */,
 				504641E722EFF07F00B0DADB /* HomeViewController.swift in Sources */,
 			);

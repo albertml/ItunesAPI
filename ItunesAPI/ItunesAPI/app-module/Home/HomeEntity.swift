@@ -7,13 +7,29 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Movies {
-    let trackArtist: String
-    let trackName: String
-    let artWorkSmall: String
-    let artWorkBig: String
-    let price: Double
-    let genre: String
-    let description: String
+//struct Movies {
+//    let trackArtist: String
+//    let trackName: String
+//    let artWorkSmall: String
+//    let artWorkBig: String
+//    let price: Double
+//    let genre: String
+//    let longDescription: String
+//}
+
+class Movies: Object {
+    @objc dynamic var id = 0
+    @objc dynamic var trackArtist = ""
+    @objc dynamic var trackName = ""
+    @objc dynamic var artWorkSmall = ""
+    @objc dynamic var artWorkBig = ""
+    @objc dynamic var price = 0.0
+    @objc dynamic var genre = ""
+    @objc dynamic var longDescription = ""
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

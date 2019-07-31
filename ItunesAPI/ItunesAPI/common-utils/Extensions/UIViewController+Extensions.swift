@@ -18,4 +18,20 @@ extension UIViewController {
     static func instantiate(fromAppStoryboard appStoryboard: AppStoryboard) -> Self {
         return appStoryboard.viewController(viewControllerClass: self)
     }
+    
+    func showLoader() {
+        let activityView = UIActivityIndicatorView(style: .whiteLarge)
+        activityView.center = self.view.center
+        activityView.startAnimating()
+        let dimView = LoaderView(frame: self.view.frame)
+        dimView.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        dimView.addSubview(activityView)
+        self.view.addSubview(dimView)
+    }
+    
+    func hideLoader() {
+        for iv in view.subviews where iv is LoaderView {
+            iv.removeFromSuperview()
+        }
+    }
 }

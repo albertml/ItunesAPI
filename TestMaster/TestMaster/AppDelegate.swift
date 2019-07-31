@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  ItunesAPI
+//  TestMaster
 //
-//  Created by Albert on 30/07/2019.
+//  Created by Albert on 31/07/2019.
 //  Copyright © 2019 Alberto Gaudicos Jr. All rights reserved.
 //
 
@@ -15,21 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window!.backgroundColor = UIColor.white
-        let splitViewController =  UISplitViewController()
-        let homeVC = HomeRouter.createHomeModule()
-        let homeNC = UINavigationController(rootViewController: homeVC)
-        let detailVC = ItemDetailViewController.instantiate(fromAppStoryboard: .Main)
-        let detailNC = UINavigationController(rootViewController: detailVC)
-        splitViewController.viewControllers = [homeNC, detailNC]
+        // Override point for customization after application launch.
+        let splitViewController = window!.rootViewController as! UISplitViewController
+        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
-        self.window!.rootViewController = splitViewController
-        self.window!.makeKeyAndVisible()
-        
-        UINavigationBar.appearance().tintColor = .white
-        
         return true
     }
 
@@ -53,16 +43,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        let userDefaults = UserDefaults()
-        userDefaults.saveData(key: "last-open", value: Date().toString())
     }
 
     // MARK: - Split view
 
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-        guard let topAsDetailController = secondaryAsNavController.topViewController as? ItemDetailViewController else { return false }
-        if topAsDetailController.movie == nil {
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
+        if topAsDetailController.detailItem == nil {
             // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
             return true
         }

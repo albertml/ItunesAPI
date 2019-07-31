@@ -13,12 +13,14 @@ class HomePresenter: HomeViewToPresenterProtocol {
     var view: HomeViewController!
     var interactor: HomePresenterToInteractorProtocol!
     var movies: [Movies] = []
+    let realmManager = RealmManager()
     
     func setupNavigationButton() {
         view.setupNavigationButton()
     }
     
     func setupViews() {
+        self.movies = getAllMovies()
         view.setupViews()
     }
     
@@ -29,13 +31,16 @@ class HomePresenter: HomeViewToPresenterProtocol {
     func searchMovies(term: String) {
         interactor.searchMovies(term: term)
     }
+    
+    func getAllMovies() -> [Movies] {
+        return realmManager.getAllMovies()
+    }
 }
 
 extension HomePresenter: HomeInteractorToPresenterProtocol {
-    func successInGettingMovies(movies: [Movies]) {
-        self.movies = movies
+    func successInGettingMovies() {
+        self.movies = getAllMovies()
         view.successInGettingMovies()
-        print(movies)
     }
     
     func failedInGettingMovies(errorMsg: String) {

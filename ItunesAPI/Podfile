@@ -9,6 +9,7 @@ target 'ItunesAPI' do
   pod 'Moya', '~> 12.0.1'
   pod 'SwiftyJSON', '~> 4.2.0'
   pod 'Nuke'
+  pod 'RealmSwift'
 
   target 'ItunesAPITests' do
     inherit! :search_paths

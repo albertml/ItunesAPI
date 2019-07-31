@@ -24,10 +24,11 @@ protocol HomeViewToPresenterProtocol: class {
     func setupViews()
     func goToItemDetail(movies: Movies, segue: UIStoryboardSegue)
     func searchMovies(term: String)
+    func getAllMovies() -> [Movies]
 }
 
 protocol HomeInteractorToPresenterProtocol: class {
-    func successInGettingMovies(movies: [Movies])
+    func successInGettingMovies()
     func failedInGettingMovies(errorMsg: String)
 }
 

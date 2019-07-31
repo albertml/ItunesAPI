@@ -20,15 +20,27 @@ class ItemDetailViewController: UIViewController {
      var movie: Movies?
     
     func configureView() {
-        // Update the user interface for the detail item.
+        
         if let nnMovie = movie {
-            self.title = nnMovie.trackName
-            imgArtwork.loadImage(imageUrl: nnMovie.artWorkBig)
-            lblTrackName.text = nnMovie.trackName
-            lblArtist.text = "Artist: " + nnMovie.trackArtist
-            lblGenre.text = "Genre: " + nnMovie.genre
-            lblPrice.text = "Price: $\(nnMovie.price)"
-            detailDescriptionLabel.text = nnMovie.description
+            DispatchQueue.main.async {
+                self.title = nnMovie.trackName
+                self.imgArtwork.loadImage(imageUrl: nnMovie.artWorkBig)
+                self.lblTrackName.text = nnMovie.trackName
+                self.lblArtist.text = "Artist: " + nnMovie.trackArtist
+                self.lblGenre.text = "Genre: " + nnMovie.genre
+                self.lblPrice.text = "Price: $\(nnMovie.price)"
+                self.detailDescriptionLabel.text = nnMovie.longDescription
+            }
+        } else {
+            let realmManager = RealmManager()
+            let allMovies = realmManager.getAllMovies()
+            if !allMovies.isEmpty {
+                let userDefaults = UserDefaults()
+                if let lastPageOpen = userDefaults.getSavedData(key: "last-open-page") {
+                    movie = allMovies[Int(lastPageOpen)!]
+                    configureView()
+                }
+            }
         }
     }
 

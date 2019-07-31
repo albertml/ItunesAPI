@@ -12,7 +12,15 @@ class HomeViewController: UITableViewController {
     
 //    var detailViewController: ItemDetailViewController? = nil
 //    var objects = [Any]()
+    
+    // MARK: Properties
+    
     var presenter: HomeViewToPresenterProtocol?
+    let userDefaults = UserDefaults()
+    var isFirstLoad = true
+    
+    
+    // MARK: VC Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +36,6 @@ class HomeViewController: UITableViewController {
         
         presenter?.setupNavigationButton()
         presenter?.setupViews()
-        presenter?.searchMovies(term: "star")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +43,43 @@ class HomeViewController: UITableViewController {
         super.viewWillAppear(animated)
     }
     
-    // MARK: - Table View
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if presenter!.getAllMovies().isEmpty {
+            showLoader()
+            presenter?.searchMovies(term: "star")
+        } else {
+            if UIDevice.current.userInterfaceIdiom == .pad { return }
+            if isFirstLoad {
+                if let _ = userDefaults.getSavedData(key: "last-open-page") {
+                    performSegue(withIdentifier: "showDetail", sender: nil)
+                    isFirstLoad = false
+                }
+            }
+        }
+    }
+    
+    // MARK: - Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                userDefaults.saveData(key: "last-open-page", value: "\(indexPath.row)")
+                let movie = presenter!.movies[indexPath.row]
+                presenter?.goToItemDetail(movies: movie, segue: segue)
+            } else {
+                if let lastPageOpen = userDefaults.getSavedData(key: "last-open-page") {
+                    let movie = presenter!.movies[Int(lastPageOpen)!]
+                    presenter?.goToItemDetail(movies: movie, segue: segue)
+                }
+            }
+        }
+    }
+}
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
+
+extension HomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let nnPresenter = presenter else { return 0 }
@@ -68,18 +111,13 @@ class HomeViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showDetail", sender: nil)
+        self.performSegue(withIdentifier: "showDetail", sender: self)
     }
     
-    // MARK: - Segues
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let movie = presenter!.movies[indexPath.row]
-                presenter?.goToItemDetail(movies: movie, segue: segue)
-            }
-        }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let lastViewedView: LastViewedTableViewCell = tableView.dequeueReusableNoIndexCell()
+        lastViewedView.showLastViewed()
+        return lastViewedView
     }
 }
 
@@ -98,15 +136,18 @@ extension HomeViewController: HomePresenterToViewProtocol {
     
     func setupViews() {
         tableView.register(MoviesTableViewCell.self)
+        tableView.register(LastViewedTableViewCell.self)
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 80.0
     }
     
     func successInGettingMovies() {
+        hideLoader()
         self.tableView.reloadData()
     }
     
     func failedInGettingMovies(errorMsg: String) {
+        hideLoader()
         print(errorMsg)
     }
 }

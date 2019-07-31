@@ -23,8 +23,8 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
                         if response.statusCode == 200 || response.statusCode == 201 || response.statusCode == 204 {
                             let json = try JSON(data: response.data)
                             let results = json["results"].arrayValue
-                            let movies = self.parseMovies(json: results)
-                            self.presenter?.successInGettingMovies(movies: movies)
+                            _ = self.parseMovies(json: results)
+                            self.presenter?.successInGettingMovies()
                         } else {
                             self.presenter?.failedInGettingMovies(errorMsg: response.data.getErrorMsg())
                         }
@@ -40,9 +40,13 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         }
     }
     
-    private func parseMovies(json: [JSON]) -> [Movies] {
-        var movieList: [Movies] = []
+    private func parseMovies(json: [JSON]) {
+        let realmManager = RealmManager()
+        if json.count > 0 {
+            realmManager.deleteMovies()
+        }
         for movie in json {
+            let id = movie["trackId"].intValue
             let trackArtist = movie["artistName"].stringValue
             let trackName = movie["trackName"].stringValue
             let artWorkSmall = movie["artworkUrl60"].stringValue
@@ -51,10 +55,17 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
             let genre = movie["primaryGenreName"].stringValue
             let description = movie["longDescription"].stringValue
             
-            let movies = Movies(trackArtist: trackArtist, trackName: trackName, artWorkSmall: artWorkSmall, artWorkBig: artWorkBig, price: price, genre: genre, description: description)
-            movieList.append(movies)
+            let movie = Movies()
+            movie.id = id
+            movie.trackArtist = trackArtist
+            movie.trackName = trackName
+            movie.artWorkSmall = artWorkSmall
+            movie.artWorkBig = artWorkBig
+            movie.price = price
+            movie.genre = genre
+            movie.longDescription = description
+
+            realmManager.saveMovieToDatabase(movie: movie)
         }
-        
-        return movieList
     }
 }
