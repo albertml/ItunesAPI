@@ -10,9 +10,6 @@ import UIKit
 
 class HomeViewController: UITableViewController {
     
-//    var detailViewController: ItemDetailViewController? = nil
-//    var objects = [Any]()
-    
     // MARK: Properties
     
     var presenter: HomeViewToPresenterProtocol?
@@ -24,16 +21,8 @@ class HomeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-//        navigationItem.leftBarButtonItem = editButtonItem
-        
-//        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-//        navigationItem.rightBarButtonItem = addButton
-//        if let split = splitViewController {
-//            let controllers = split.viewControllers
-//            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? ItemDetailViewController
-//        }
-        
+
+        // Setup page rendering
         presenter?.setupNavigationButton()
         presenter?.setupViews()
     }
@@ -45,14 +34,16 @@ class HomeViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // Check if saved movie, if empty then search for default 'star' term
+        // Else display saved movie
         if presenter!.getAllMovies().isEmpty {
             showLoader()
             presenter?.searchMovies(term: "star")
         } else {
             if UIDevice.current.userInterfaceIdiom == .pad { return }
             if isFirstLoad {
-                if let _ = userDefaults.getSavedData(key: "last-open-page") {
-                    performSegue(withIdentifier: "showDetail", sender: nil)
+                if let _ = userDefaults.getSavedData(key: Constants.leavepage.description) {
+                    performSegue(withIdentifier: Constants.showdetailsegue.description, sender: nil)
                     isFirstLoad = false
                 }
             }
@@ -62,13 +53,16 @@ class HomeViewController: UITableViewController {
     // MARK: - Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == Constants.showdetailsegue.description {
             if let indexPath = tableView.indexPathForSelectedRow {
-                userDefaults.saveData(key: "last-open-page", value: "\(indexPath.row)")
+                // Show detail of selected movie
+                userDefaults.saveData(key: Constants.leavepage.description, value: "\(indexPath.row)")
                 let movie = presenter!.movies[indexPath.row]
                 presenter?.goToItemDetail(movies: movie, segue: segue)
             } else {
-                if let lastPageOpen = userDefaults.getSavedData(key: "last-open-page") {
+                // Handling selected item in last open page
+                if let lastPageOpen = userDefaults.getSavedData(key: Constants.leavepage.description) {
+                    if Int(lastPageOpen)! > presenter!.movies.count { return }
                     let movie = presenter!.movies[Int(lastPageOpen)!]
                     presenter?.goToItemDetail(movies: movie, segue: segue)
                 }
@@ -111,7 +105,7 @@ extension HomeViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showDetail", sender: self)
+        self.performSegue(withIdentifier: Constants.showdetailsegue.description, sender: self)
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -123,18 +117,22 @@ extension HomeViewController {
 
 extension HomeViewController: HomePresenterToViewProtocol {
     func setupNavigationButton() {
+        // Setup navigation appearance
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        UINavigationBar.appearance().largeTitleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: UIColor.white,
-             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 22)]
         self.navigationController?.navigationBar.barTintColor = UIColor(hex: 0xFF7E79)
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         
+        // Setup search controller
         let search = UISearchController(searchResultsController: nil)
         search.searchResultsUpdater = self
+        search.searchBar.tintColor = .white
+        self.navigationItem.hidesSearchBarWhenScrolling = false
         self.navigationItem.searchController = search
     }
     
     func setupViews() {
+        // Setup tableview
         tableView.register(MoviesTableViewCell.self)
         tableView.register(LastViewedTableViewCell.self)
         tableView.tableFooterView = UIView()
@@ -154,11 +152,9 @@ extension HomeViewController: HomePresenterToViewProtocol {
 
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+        // Check if search text is not nil or empty
         guard let searchText = searchController.searchBar.text else { return }
-        if searchText.isEmpty {
-            presenter?.searchMovies(term: "star")
-            return
-        }
+        if searchText.isEmpty { return }
         presenter?.searchMovies(term: searchText)
     }
 }

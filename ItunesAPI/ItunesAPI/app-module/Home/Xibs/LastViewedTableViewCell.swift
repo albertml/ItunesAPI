@@ -16,7 +16,7 @@ class LastViewedTableViewCell: UITableViewCell {
     
     func showLastViewed() {
         let userDefaults = UserDefaults()
-        guard let lastOpen = userDefaults.getSavedData(key: "last-open") else {
+        guard let lastOpen = userDefaults.getSavedData(key: Constants.lastopen.description) else {
             lblLastViewed.text = "Today"
             return
         }

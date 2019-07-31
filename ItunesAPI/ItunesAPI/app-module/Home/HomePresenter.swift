@@ -9,11 +9,16 @@
 import UIKit
 
 class HomePresenter: HomeViewToPresenterProtocol {
+    
+    // Properties
+    
     var router: HomePresenterToRouterProtocol?
     var view: HomeViewController!
     var interactor: HomePresenterToInteractorProtocol!
     var movies: [Movies] = []
     let realmManager = RealmManager()
+    
+    // Methods
     
     func setupNavigationButton() {
         view.setupNavigationButton()

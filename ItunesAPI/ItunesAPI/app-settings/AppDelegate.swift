@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        // Setup master detail
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.backgroundColor = UIColor.white
         let splitViewController =  UISplitViewController()
@@ -28,7 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         self.window!.rootViewController = splitViewController
         self.window!.makeKeyAndVisible()
         
+        UINavigationBar.appearance().largeTitleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.white,
+             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 22)]
         UINavigationBar.appearance().tintColor = .white
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         return true
     }
@@ -54,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         let userDefaults = UserDefaults()
-        userDefaults.saveData(key: "last-open", value: Date().toString())
+        userDefaults.saveData(key: Constants.lastopen.description, value: Date().toString())
     }
 
     // MARK: - Split view

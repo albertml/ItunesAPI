@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5018986322F1D3AA0022B2B9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5018986222F1D3AA0022B2B9 /* Constants.swift */; };
 		504641E722EFF07F00B0DADB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641E622EFF07F00B0DADB /* HomeViewController.swift */; };
 		504641EC22EFF1F400B0DADB /* HomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641EB22EFF1F400B0DADB /* HomeEntity.swift */; };
 		504641EE22EFF20400B0DADB /* HomeIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504641ED22EFF20400B0DADB /* HomeIteractor.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5018986222F1D3AA0022B2B9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		504641E622EFF07F00B0DADB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		504641EB22EFF1F400B0DADB /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
 		504641ED22EFF20400B0DADB /* HomeIteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIteractor.swift; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5018986122F1D3930022B2B9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5018986222F1D3AA0022B2B9 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		504641E222EFEFB600B0DADB /* app-settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +176,7 @@
 		504641E422EFEFCD00B0DADB /* common-utils */ = {
 			isa = PBXGroup;
 			children = (
+				5018986122F1D3930022B2B9 /* Constants */,
 				50C1395922F1195D00C205D9 /* Manager */,
 				50C1395622F1181100C205D9 /* CustomViews */,
 				504641F722EFF32200B0DADB /* Extensions */,
@@ -593,6 +604,7 @@
 				50C1395B22F1197400C205D9 /* RealmManager.swift in Sources */,
 				50A60C1B22EFEA6400DFA439 /* AppDelegate.swift in Sources */,
 				504641E722EFF07F00B0DADB /* HomeViewController.swift in Sources */,
+				5018986322F1D3AA0022B2B9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

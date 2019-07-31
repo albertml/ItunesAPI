@@ -13,6 +13,7 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
     var presenter: HomeInteractorToPresenterProtocol?
     
     func searchMovies(term: String) {
+        // API call for search item and handle response
         ItunesProvider.request(Itunes.searctItem(term)) { result in
             switch result {
             case let .success(response):
@@ -41,6 +42,7 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
     }
     
     private func parseMovies(json: [JSON]) {
+        // JSON parsing and save it to Realm DB
         let realmManager = RealmManager()
         if json.count > 0 {
             realmManager.deleteMovies()
