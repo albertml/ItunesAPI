@@ -5,10 +5,11 @@ Itunes Movies is a swift project that showing list of search movies in itunes AP
 ## Installation
 
 1. Install CocoaPods, if you have not done so already. See installation procedure [here](https://guides.cocoapods.org/using/getting-started.html#toc_3).
-2. Clone this project https://github.com/albertml/ItunesAPI.git
+2. Clone this url https://github.com/albertml/ItunesAPI.git into your local machine.
+3. Go to project directory in your command line and install cocoapods libraries by running
 
 ```bash
-pip install foobar
+pod install
 ```
 
 ## Usage
