@@ -14,20 +14,15 @@ pod install
 
 4. Open ItunesAPI.xcworkspace project
 
-## Usage
+## Dependencies
 
-```python
-import foobar
+1. RealmSwift - is a mobile database: a replacement for Core Data & SQLite
+2. Moya - network abstraction layer written in Swift.
+3. Nuke - powerful image loading and caching system.
+4. SwiftyJSON - the better way to deal with JSON data in Swift.
 
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
+## Architecture
+In this project I am using VIPER architecture. I know this is not mandatory for small project like this but this is very helpful especially for larger projects.
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+## Developer
+Alberto Gaudicos Jr.
