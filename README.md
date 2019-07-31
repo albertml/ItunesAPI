@@ -22,7 +22,7 @@ pod install
 4. SwiftyJSON - the better way to deal with JSON data in Swift.
 
 ## Architecture
-In this project I am using VIPER architecture. I know this is not mandatory for small project like this but this is very helpful especially for larger projects.
+In this project I am using VIPER architecture. I know this is not mandatory for small project like this but this is just for example. This is very helpful especially for larger projects because it's easy to maintain due to its single responsibility principle and most separation of powers. The codes are uniform and easy to understand especially for the beginners in iOS development.
 
 ## Developer
 Alberto Gaudicos Jr.
