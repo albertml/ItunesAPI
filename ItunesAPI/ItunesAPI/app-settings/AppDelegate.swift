@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
              NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 22)]
         UINavigationBar.appearance().tintColor = .white
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: Constants.placeholder.description, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         
         return true
     }

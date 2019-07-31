@@ -38,7 +38,7 @@ class HomeViewController: UITableViewController {
         // Else display saved movie
         if presenter!.getAllMovies().isEmpty {
             showLoader()
-            presenter?.searchMovies(term: "star")
+            presenter?.searchMovies(term: Constants.defaultsearch.description)
         } else {
             if UIDevice.current.userInterfaceIdiom == .pad { return }
             if isFirstLoad {
@@ -127,6 +127,8 @@ extension HomeViewController: HomePresenterToViewProtocol {
         let search = UISearchController(searchResultsController: nil)
         search.searchResultsUpdater = self
         search.searchBar.tintColor = .white
+        search.searchBar.setImage(UIImage(named: Constants.searchicon.description), for: UISearchBar.Icon.search, state: .normal)
+        search.searchBar.setImage(UIImage(named: Constants.clearicon.description), for: UISearchBar.Icon.clear, state: .normal)
         self.navigationItem.hidesSearchBarWhenScrolling = false
         self.navigationItem.searchController = search
     }

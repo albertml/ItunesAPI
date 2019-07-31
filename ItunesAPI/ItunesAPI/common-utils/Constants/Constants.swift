@@ -9,7 +9,7 @@
 import Foundation
 
 enum Constants {
-    case lastopen, leavepage, showdetailsegue
+    case lastopen, leavepage, showdetailsegue, clearicon, searchicon, placeholder, defaultsearch
 }
 
 extension Constants: CustomStringConvertible {
@@ -21,6 +21,14 @@ extension Constants: CustomStringConvertible {
             return "last-open-page"
         case .showdetailsegue:
             return "showDetail"
+        case .clearicon:
+            return "ic_clear"
+        case .searchicon:
+            return "ic_search"
+        case .placeholder:
+            return "Search Movies"
+        case .defaultsearch:
+            return "star"
         }
     }
 }
