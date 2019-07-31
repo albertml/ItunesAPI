@@ -12,6 +12,8 @@ Itunes Movies is a swift project that showing list of search movies in itunes AP
 pod install
 ```
 
+4. Open ItunesAPI.xcworkspace project
+
 ## Usage
 
 ```python
