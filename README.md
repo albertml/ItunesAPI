@@ -1,11 +1,11 @@
 # Itunes Movies
 
-Itunes Movies is a swift project that showing list of search movies in itunes API. Take a look at their documentation
-https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/
+Itunes Movies is a swift project that showing list of search movies in itunes API. You can take a look at their [documentation](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/).
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+1. Install CocoaPods, if you have not done so already. See installation procedure [here](https://guides.cocoapods.org/using/getting-started.html#toc_3).
+2. Clone this project https://github.com/albertml/ItunesAPI.git
 
 ```bash
 pip install foobar
